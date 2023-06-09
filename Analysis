@@ -1,0 +1,73 @@
+# Log in to Scinet Teach Cluster 
+ssh <username>@teach.scinet.utoronto.ca
+
+# Cloning the repo SCanD_project (https://github.com/24jagruti11/SCanD_project.git)
+cd $SCRATCH
+git clone https://github.com/TIGRLab/SCanD_project.git
+
+# Running the software set-up script 
+cd ${SCRATCH}/SCanD_project
+source code/00_setup_data_directories.sh
+
+# Syncing the data on local computer on to the SciNet Teach Cluster
+rsync -av Desktop/file_path <username>@teach.scinet.utoronto.ca:/scratch/l/directory_path/
+
+# RUNNING MQRIC
+SUB_SIZE=1
+N_SUBJECTS=$(( $( wc -l ./data/local/bids/participants.tsv | cut -f1 -d' ' ) - 1 ))
+array_job_length=$(echo "$N_SUBJECTS/${SUB_SIZE}" | bc)
+echo "number of array is: ${array_job_length}"
+## submitting the array job to the queue
+sbatch --array=0-${array_job_length} ./code/01_mriqc.sh
+
+cd ${SCRATCH}/SCanD_project
+git pull # To work with the updated version
+
+# Running fMRIPrep (func)
+SUB_SIZE=1
+N_SUBJECTS=$(( $( wc -l ./data/local/bids/participants.tsv | cut -f1 -d' ' ) - 1 ))
+array_job_length=$(echo "$N_SUBJECTS/${SUB_SIZE}" | bc)
+echo "number of array is: ${array_job_length}"
+## submit the array job to the queue
+sbatch --array=0-${array_job_length} ./code/02_fmriprep_func_scinet.sh
+
+cd ${SCRATCH}/SCanD_project
+git pull # To work with the updated version
+
+# Running Ciftify Clean
+SUB_SIZE=1
+N_DTSERIES=$(ls -1d ./data/local/ciftify/sub*/MNINonLinear/Results/*task*/*dtseries.nii | wc -l)
+array_job_length=$(echo "$N_DTSERIES/${SUB_SIZE}" | bc)
+echo "number of array is: ${array_job_length}"
+## submit the array job to the queue
+sbatch --array=0-${array_job_length} ./code/04_cifti_clean.sh
+
+cd ${SCRATCH}/SCanD_project
+git pull # To work with the updated version
+
+# Running Ciftify 
+SUB_SIZE=1
+N_SUBJECTS=$(( $( wc -l ./data/local/bids/participants.tsv | cut -f1 -d' ' ) - 1 ))
+array_job_length=$(echo "$N_SUBJECTS/${SUB_SIZE}" | bc)
+echo "number of array is: ${array_job_length}"
+## submit the array job to the queue
+cd ${SCRATCH}/SCanD_project
+sbatch --array=0-${array_job_length} ./code/03_ciftify_scinet.sh
+
+cd ${SCRATCH}/SCanD_project
+git pull # To work with the updated version
+
+# Parcellation
+SUB_SIZE=10 # for func the sub size is moving to 1 participant because there are two runs and 8 tasks per run..
+N_DTSERIES=$(ls -1d ./data/local/ciftify/sub*/MNINonLinear/Results/*task*/*dtseries.nii | wc -l)
+array_job_length=$(echo "$N_DTSERIES/${SUB_SIZE}" | bc)
+echo "number of array is: ${array_job_length}"
+## submit the array job to the queue
+sbatch --array=0-${array_job_length} ./code/05_parcellate.sh
+
+cd ${SCRATCH}/SCanD_project
+git pull # To work with the updated version
+
+# Sync the data (download)
+rsync -av <username>@teach.scinet.utoronto.ca:/scratch/l/directory_path/ Desktop/file_path
+
