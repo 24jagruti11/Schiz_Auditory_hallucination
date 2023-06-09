@@ -1,5 +1,5 @@
 # Schiz_Auditory_hallucination
-"Functional Connectivity in Schizophrenia patients with and without Auditory Hallucinations"
+**Functional Connectivity in Schizophrenia patients with and without Auditory Hallucinations**
 
 # Summary: 
 This project focuses on examining if there are differences in the functional connectivity in schizophrenia with and without auditory hallucinations as well as healthy controls during speech perception. 
