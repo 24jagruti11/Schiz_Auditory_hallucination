@@ -2,20 +2,20 @@
 type: "project" # DON'T TOUCH THIS ! :)
 date: "2020-05-16" # Date you first upload your project.
 # Title of your project (we like creative title)
-title: "This is an example project page which serves as a template"
+title: "Functional Connectivity in Schizophrenia patients with and without Auditory Hallucinations"
 
 # List the names of the collaborators within the [ ]. If alone, simple put your name within []
-names: [Samuel Guay, Pierre Bellec]
+names: [Jagruti Pershad, Daisy Hu]
 
 # Your project GitHub repository URL
-github_repo: https://github.com/brainhack-school2023/project_template
+github_repo: https://github.com/24jagruti11/Schiz_Auditory_hallucination.git
 
 # If you are working on a project that has website, indicate the full url including "https://" below or leave it empty.
 website:
 
 # List +- 4 keywords that best describe your project within []. Note that the project summary also involves a number of key words. Those are listed on top of the [github repository](https://github.com/brainhack-school2020/project_template), click `manage topics`.
 # Please only lowercase letters
-tags: [project, github, markdown, brainhack]
+tags: [Schizophrenia, fMRI, Auditory Hallucination, Functional Connectivity]
 
 # Summarize your project in < ~75 words. This description will appear at the top of your page and on the list page with other projects..
 
@@ -49,27 +49,26 @@ Ultimately, the project template will be used by all BHS participants. Data on t
 ### Deliverables
 
 At the end of this project, we will have:
- - The current markdown document, completed and revised.
- - A gallery of the student projects at Brainhack 2020.
- - Instructions on the website about how to submit a pull request to the [brainhack school website](https://github.com/BrainhackMTL/school) in order to add the project description to the website.
+ - Git repository
+ - Codescript
 
 ## Results
 
 ### Progress overview
 
-The project was swiftly initiated by P Bellec, based on the existing template created in 2019 by Tristan Glatard and improved by different students. It was really not that hard. Community feedback is expected to lead to rapid further improvements of this first version.
+The project involved importing data on a github repository, using SciNet teach cluster for the preprocessing of the data and parcellation. Preprocessing involved running MRIQC to generate quality metric report, fMRIPrep for preprocessing of the data, Ciftify Clean for signal cleaning and Ciftify for the visualisation of the data. Parcellation helped to divide brain regions based on brain activty where groups of similar voxels are averaged to reduce the effect of random noise effects.  MACHINE LEARNING
 
 ### Tools I learned during this project
 
- * **Meta-project** P Bellec learned how to do a meta project for the first time, which is developping a framework while using it at the same time. It felt really weird, but somehow quite fun as well.
- * **Github workflow-** The successful use of this template approach will demonstrate that it is possible to incorporate dozens of students presentation on a website collaboratively over a few weeks.
- * **Project content** Through the project reports generated using the template, it is possible to learn about what exactly the brainhack school students are working on.
+ 
+ fMRI Data Processing with Nilearn
+ fMRI Data Visualization
 
 ### Results
 
 #### Deliverable 1: report template
 
-You are currently reading the report template! I will let you judge whether it is useful or not. If you think there is something that could be improved, please do not hesitate to open an issue [here](https://github.com/brainhack-school2020/project_template/issues) and let us know.
+A complete README summarizing the entire project and its results.
 
 #### Deliverable 2: project gallery
 
