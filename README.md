@@ -1,9 +1,5 @@
 # Schiz_Auditory_hallucination
----
-type: "project" # DON'T TOUCH THIS ! :)
-date: "2020-05-16" # Date you first upload your project.
-# Title of your project (we like creative title)
-title: "Functional Connectivity in Schizophrenia patients with and without Auditory Hallucinations"
+"Functional Connectivity in Schizophrenia patients with and without Auditory Hallucinations"
 
 # List the names of the collaborators within the [ ]. If alone, simple put your name within []
 names: [Jagruti Pershad, Daisy Hu]
