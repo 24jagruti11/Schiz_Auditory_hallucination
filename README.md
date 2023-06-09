@@ -1,34 +1,13 @@
 # Schiz_Auditory_hallucination
 "Functional Connectivity in Schizophrenia patients with and without Auditory Hallucinations"
 
-# List the names of the collaborators within the [ ]. If alone, simple put your name within []
-names: [Jagruti Pershad, Daisy Hu]
-
-# Your project GitHub repository URL
-github_repo: https://github.com/24jagruti11/Schiz_Auditory_hallucination.git
-
-# If you are working on a project that has website, indicate the full url including "https://" below or leave it empty.
-website:
-
-# List +- 4 keywords that best describe your project within []. Note that the project summary also involves a number of key words. Those are listed on top of the [github repository](https://github.com/brainhack-school2020/project_template), click `manage topics`.
-# Please only lowercase letters
-tags: [Schizophrenia, fMRI, Auditory Hallucination, Functional Connectivity]
-
-# Summarize your project in < ~75 words. This description will appear at the top of your page and on the list page with other projects..
-
-summary: "This project focuses on examining if there are differences in the functional connectivity in schizophrenia with and without auditory hallucinations as well as healthy controls during speech perception. 
+# Summary: 
+This project focuses on examining if there are differences in the functional connectivity in schizophrenia with and without auditory hallucinations as well as healthy controls during speech perception. 
 The data (OpenNeuro) (https://openneuro.org/datasets/ds004302/versions/1.0.1). 
 71 participants were divided into 3 groups, Schizophrenia patients a)**with** auditory hallucination (AVH+), b)**without** auditory hallucination (AVH-) and Healthy Controls (HC)
 They did a speech perception task when they were in a fMRI scanner.
 Our aim was to learn preprocessing and analysis of fMRI data and getting familiar with machine learning. 
-
-# If you want to add a cover image (listpage and image in the right), add it to your directory and indicate the name
-# below with the extension.
-image: "bhs2020.png"
----
-<!-- This is an html comment and this won't appear in the rendered page. You are now editing the "content" area, the core of your description. Everything that you can do in markdown is allowed below. We added a couple of comments to guide your through documenting your progress. -->
-
-## Project definition
+## Project 
 
 ### Background
 This project uses machine learning to look at functional connectivity in schizophrenia patients with and without auditory hallucination during speech perception.
